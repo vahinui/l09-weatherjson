@@ -1,11 +1,17 @@
-var weatherObject = new XMLHttpRequest();
-weatherObject.open('GET','http://api.openweathermap.org/data/2.5/weather?zip=55333,us&appid=3de89a15e299832c9c639c4d433af31f',true);
+var header = document.querySelector('header');
+var section = document.querySelector('section');
 
-weatherObject.send();
+var requestURL = 'https://byui-cit230.github.io/weather/data/towndata.json';
 
-weatherObject.onload = function(){
-    var weatherInfo = JSON.parse(weatherObject.responseText);
-    console.log(weatherInfo);
-    
-    
-} //end of the fucntion
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function(){
+    var towns = request.response;
+    showtowns(towns);
+}
+
+function showtowns(jsonObj) {
+    var towns = jsonObj[towns];
+}
