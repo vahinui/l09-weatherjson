@@ -17,7 +17,7 @@ weatherObject.onload = function() {
     var weather_des = "//openweathermap.org/img/w/" + description ; document.getElementById('weather_description').src= description;
     
     var iconcode = weatherInfo.weather[0].icon;
-    var icon_path ="http://openweathermap.org/img/w/" + iconcode + ".png";
+    var icon_path ="http://openweathermap.org/img/w/10d.png";
     document.getElementById('weather_icon').src= icon_path;
     
 }  //end of the function
